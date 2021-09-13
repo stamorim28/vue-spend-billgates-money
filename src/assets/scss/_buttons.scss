@@ -1,0 +1,31 @@
+@import "./colors";
+
+.btn {
+  width: 100%;
+  border: none;
+  touch-action: manipulation;
+  padding: 10px 12px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $txt-color;
+}
+
+.btn--disabled {
+  background: $bg-body;
+  cursor: auto !important;
+}
+
+.btn--sell {
+  background: $bg-buttons-sell;
+}
+
+.btn--buy {
+  background: $bg-buttons-buy;
+}
+
+.btn--sell,
+.btn--buy {
+  cursor: pointer;
+  color: $btn-color !important;
+}

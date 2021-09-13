@@ -1,0 +1,24 @@
+@import "./colors";
+
+@mixin set-buttons-large($color) {
+  background: $color;
+  color: $btn-color;
+}
+
+@mixin set-buttons-min($color) {
+  background: $color;
+  color: $btn-color;
+}
+
+.btn-lg {
+  width: 100%;
+}
+
+.btn-mn,
+.btn-lg {
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 3px;
+  border: none;
+  font-weight: 700;
+}

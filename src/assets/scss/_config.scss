@@ -1,0 +1,13 @@
+@import "./colors";
+
+.container {
+  background-color: $bg-body;
+}
+
+.container--padd {
+  padding: 0 10% 2rem 10%;
+}
+
+.bloco {
+  background-color: $bg-container;
+}
