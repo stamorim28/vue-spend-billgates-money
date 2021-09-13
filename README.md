@@ -2,3 +2,5 @@
 ## Um clone do jogo em Vue 3 com Vuex e Sass.
 
 Link - https://spend-bill-gates-money-clone.netlify.app/
+
+Em andamento...
