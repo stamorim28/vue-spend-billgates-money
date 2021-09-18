@@ -177,7 +177,7 @@ export default ({
           img: "https://neal.fun/spend/images/boeing-747.jpg"
         },
         {
-          name: "m1 abrams",
+          name: "Mona Lisa",
           id: 30,
           price: 780000000,
           img: "https://neal.fun/spend/images/mona-lisa.jpg"

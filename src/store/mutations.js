@@ -1,8 +1,13 @@
 export default ({
+
     BUY_SOMTH(state, payload){
-        state.money = state.money - payload;
+        const prods = state.shop.find((prod) => prod.id === payload);
+        if (!prods) return;
+        state.money -= prods.price;
     },
     SELL_SOMTH(state, payload){
-        state.money = state.money + payload;
+        const prods = state.shop.find((prod) => prod.id === payload);
+        if (!prods) return;
+        state.money += prods.price;
     },
 })
