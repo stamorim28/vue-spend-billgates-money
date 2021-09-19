@@ -79,7 +79,7 @@ export default {
     margin: 0.85rem 0;
 
     h1 {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       text-transform: capitalize;
     }
 

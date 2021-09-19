@@ -1,5 +1,3 @@
 export default ({
-    billMoney(state){
-        return `${state.money}`
-      }
+  cart: (state) => state.shop.filter((prod) => prod.qtd > 0),
 })
