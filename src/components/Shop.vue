@@ -83,8 +83,7 @@ export default {
       text-transform: capitalize;
     }
 
-    h3,
-    input {
+    h3 {
       font-size: 1rem;
       color: $price-color;
       text-align: center;
@@ -101,6 +100,7 @@ export default {
       width: 100%;
       margin: 0 0.5rem;
       text-align: center;
+      font-weight: bolder;
     }
   }
 }

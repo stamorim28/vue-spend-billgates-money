@@ -1,18 +1,21 @@
 <template>
   <div>
     <Header />
-    <Shop />
+    <Home />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
-import Shop from "./components/Shop.vue";
+import Home from "./pages/Home.vue";
+import Footer from "./components/Footer.vue";
 export default {
   name: "App",
   components: {
     Header,
-    Shop,
+    Home,
+    Footer,
   },
 };
 </script>

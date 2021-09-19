@@ -1,7 +1,7 @@
 <template>
   <div class="list__price">
     <button
-      v-if="num >= 1"
+      v-if="num >= 1 && !(money >= billions)"
       @click="
         sell(id);
         --num;
@@ -13,7 +13,7 @@
     <button v-else class="btn">
       Sell
     </button>
-    <input type="number" v-model.number="num" name="qtd" id="inputEl" />
+    <input type="text" v-model.number="num" name="qtd" disabled />
     <button v-if="money < price" class="btn">
       Buy
     </button>
@@ -43,6 +43,7 @@ export default {
   data() {
     return {
       num: 0,
+      billions: this.money,
     };
   },
   methods: {
