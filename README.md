@@ -1,32 +1,6 @@
-<!-- # <a href="https://neal.fun/spend/">Spend Bill Gates's Money</a> - Clone
-## Um clone do jogo em Vue com Vuex e Sass.
+# Spend Bill Gates' Money Clone
 
-Link - https://spend-bill-gates-money-clone.netlify.app/
-
-Projeto usando o Vuex para tratar as alterações dos valores na aplicação. O <a href="https://neal.fun/spend/">jogo</a> originalmente é feito em Nuxt mas decidi por usar o Vue em si.
-
-<img src="https://raw.githubusercontent.com/stamorim28/vue-spend-billgates-money/master/pictures/print_1.png" alt="print"/>
-
-## Setup
-```
-npm install
-```
-
-### Server
-```
-npm run serve
-```
-
-### Build
-```
-npm run build
-```
--->
-
-
-# Spend Bill Gates's Money Clone
-
-#### Clone do jogo Spend Bill Gates's Money feito com Vue.
+#### Clone do jogo Spend Bill Gates' Money feito com Vue.
 
 
 ## Objetivos
