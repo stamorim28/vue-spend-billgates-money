@@ -1,7 +1,7 @@
 <template>
   <main class="container--padd">
     <div class="money-bar">
-      <h1>{{ `$${money}` }}</h1>
+      <h1>{{ formatAllMoney(money) }}</h1>
     </div>
 
     <ul class="list">
@@ -18,12 +18,11 @@
 import { mapState } from "vuex";
 import Input from "./Input.vue";
 import Price from "./Price.vue";
+import { formatAllMoney } from "../mixins/formatAllMoney";
 
 export default {
   name: "Shop",
-  data() {
-    return {};
-  },
+  mixins: [formatAllMoney],
   components: {
     Input,
     Price,

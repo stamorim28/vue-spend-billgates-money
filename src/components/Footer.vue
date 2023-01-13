@@ -5,7 +5,7 @@
       <div class="cart__item">
         <h1>{{ prod.name }}</h1>
         <div class="cart__price">
-          <h1>{{ `$` + prod.price }}</h1>
+          <h1>{{ formatAllMoney(prod.price, "compact") }}</h1>
           <h1>{{ `x` + prod.qtd }}</h1>
         </div>
       </div>
@@ -15,9 +15,11 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { formatAllMoney } from "../mixins/formatAllMoney";
 
 export default {
   name: "Footer",
+  mixins: [formatAllMoney],
   computed: {
     ...mapGetters(["cart"]),
   },
