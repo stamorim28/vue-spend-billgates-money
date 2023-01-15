@@ -13,11 +13,12 @@ O projeto tem as mesmas funcionalidades do [original](https://neal.fun/spend/), 
 <img width="650" src="https://raw.githubusercontent.com/stamorim28/vue-spend-billgates-money/master/pictures/print_1.png" alt="print"/>
 
 
-## Tecnologias
+## Tecnologias e Metodologias
 
 - [Vue](https://vuejs.org/)
 - [SASS/SCSS](https://sass-lang.com/)
 - [Vuex](https://vuex.vuejs.org/)
+- [BEM](https://en.bem.info/methodology/quick-start/)
 
 
 ## Setup
