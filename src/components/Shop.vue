@@ -1,7 +1,18 @@
 <template>
   <main class="container--padd">
     <div class="money-bar">
-      <h1>{{ formatAllMoney(money) }}</h1>
+      <!-- <h1>{{ formatAllMoney(money) }}</h1> -->
+      <h1>
+        <vue3-autocounter
+          ref="counter"
+          :startAmount="money - newMoney"
+          :endAmount="money"
+          :duration="2"
+          prefix="$"
+          separator=","
+          :autoinit="true"
+        />
+      </h1>
     </div>
 
     <ul class="list">
@@ -18,6 +29,7 @@
 import { mapState } from "vuex";
 import Input from "./Input.vue";
 import Price from "./Price.vue";
+import Vue3autocounter from "vue3-autocounter";
 import { formatAllMoney } from "../mixins/formatAllMoney";
 
 export default {
@@ -26,12 +38,22 @@ export default {
   components: {
     Input,
     Price,
+    "vue3-autocounter": Vue3autocounter,
+  },
+  data() {
+    return {
+      initialMoney: 100000000000,
+    };
   },
   computed: {
     ...mapState({
       money: (state) => state.money,
       shop: (state) => state.shop,
     }),
+
+    newMoney() {
+      return this.initialMoney - this.money;
+    },
   },
 };
 </script>
