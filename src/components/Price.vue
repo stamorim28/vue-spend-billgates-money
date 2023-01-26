@@ -1,7 +1,7 @@
 <template>
   <div class="list__title">
     <h1>{{ name }}</h1>
-    <h3>{{ formatAllMoney(price) }}</h3>
+    <h2>{{ formatAllMoney(price) }}</h2>
   </div>
 </template>
 

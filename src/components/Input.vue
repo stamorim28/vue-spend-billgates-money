@@ -7,14 +7,24 @@
         --num;
       "
       class="btn btn--sell"
+      type="reset"
     >
       Sell
     </button>
-    <button v-else class="btn">
+    <button v-else class="btn" type="reset">
       Sell
     </button>
-    <input type="text" v-model.number="num" name="qtd" disabled />
-    <button v-if="money < price" class="btn">
+    <form action="/">
+      <label :for="`prod-'${id}`"></label>
+      <input
+        type="text"
+        v-model.number="num"
+        name="qtd"
+        placeholder="num"
+        disabled
+      />
+    </form>
+    <button v-if="money < price" class="btn" type="reset">
       Buy
     </button>
     <button
@@ -24,6 +34,7 @@
         ++num;
       "
       class="btn btn--buy"
+      type="reset"
     >
       Buy
     </button>

@@ -1,7 +1,6 @@
 <template>
   <main class="container--padd">
     <div class="money-bar">
-      <!-- <h1>{{ formatAllMoney(money) }}</h1> -->
       <h1>
         <vue3-autocounter
           ref="counter"
@@ -104,7 +103,7 @@ export default {
       text-transform: capitalize;
     }
 
-    h3 {
+    h2 {
       font-size: 1rem;
       color: $price-color;
       text-align: center;
@@ -117,11 +116,15 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    input {
+    form {
       width: 100%;
-      margin: 0 0.5rem;
-      text-align: center;
-      font-weight: bolder;
+      input {
+        width: 90%;
+        height: 100%;
+        padding: 0 0.5rem;
+        text-align: center;
+        font-weight: bolder;
+      }
     }
   }
 }

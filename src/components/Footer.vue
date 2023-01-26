@@ -5,8 +5,8 @@
       <div class="cart__item">
         <h2>{{ prod.name }}</h2>
         <div class="cart__price">
-          <h4>{{ formatAllMoney(prod.price, "compact") }}</h4>
-          <h4>{{ `x` + prod.qtd }}</h4>
+          <h3>{{ formatAllMoney(prod.price, "compact") }}</h3>
+          <h3>{{ `x` + prod.qtd }}</h3>
         </div>
       </div>
     </div>
@@ -91,12 +91,12 @@ export default {
   &__price {
     display: flex;
 
-    h4:first-child {
+    h3:first-child {
       font-weight: bold;
       color: $price-color;
     }
 
-    h4:last-child {
+    h3:last-child {
       margin-left: 0.75rem;
       color: $cost-color;
       font-weight: bold;
