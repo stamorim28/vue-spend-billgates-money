@@ -3,10 +3,18 @@
     <h1>Your Receipt</h1>
     <div v-for="(prod, index) in cart" :key="index" class="cart__list">
       <div class="cart__item">
-        <h1>{{ prod.name }}</h1>
+        <h2>{{ prod.name }}</h2>
         <div class="cart__price">
-          <h1>{{ formatAllMoney(prod.price, "compact") }}</h1>
-          <h1>{{ `x` + prod.qtd }}</h1>
+          <h3>{{ formatAllMoney(prod.price, "compact") }}</h3>
+          <h3>{{ `x` + prod.qtd }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="spree-total">
+      <div class="spree-total--block">
+        <span>TOTAL</span>
+        <div class="spree-total--money">
+          {{ formatAllMoney(getTotalCart) }}
         </div>
       </div>
     </div>
@@ -22,6 +30,16 @@ export default {
   mixins: [formatAllMoney],
   computed: {
     ...mapGetters(["cart"]),
+
+    getTotalCart() {
+      const carts = this.cart;
+      let total = 0;
+
+      carts.forEach((item) => {
+        total += item.price * item.qtd;
+      });
+      return total;
+    },
   },
 };
 </script>
@@ -44,7 +62,6 @@ export default {
 
   &__list {
     width: 70%;
-    margin-top: 1rem;
 
     @media screen and (max-width: 768px) {
       width: 95%;
@@ -57,12 +74,12 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    h1 {
+    h2 {
       font-size: 1.125rem;
       font-weight: normal;
     }
 
-    h1:first-child {
+    h2:first-child {
       text-transform: capitalize;
     }
 
@@ -74,16 +91,48 @@ export default {
   &__price {
     display: flex;
 
-    h1:first-child {
+    h3:first-child {
       font-weight: bold;
       color: $price-color;
     }
 
-    h1:last-child {
+    h3:last-child {
       margin-left: 0.75rem;
       color: $cost-color;
       font-weight: bold;
     }
+  }
+}
+
+.spree-total {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 95% !important;
+  }
+
+  &--block {
+    width: 100%;
+    margin: 10px 20%;
+    padding: 10px 0;
+    font-weight: 700;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      margin: 10px 0 !important;
+    }
+  }
+
+  &--money {
+    margin-left: 0.75rem;
+    color: $price-color;
+    font-weight: bold;
   }
 }
 </style>

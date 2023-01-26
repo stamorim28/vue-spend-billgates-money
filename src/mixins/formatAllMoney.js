@@ -1,27 +1,18 @@
 export const formatAllMoney = {
   methods: {
     formatAllMoney(value, notation) {
-      let currency = value;
-      let compact = { notation: "compact" };
-
-      const trueNotation = () => {
-        if (notation && notation === "compact") {
-          return compact.notation;
-        } else if (notation && notation !== "compact") {
-          throw new Error(`Parametrô incorreto, é esperado: "compact"`);
-        } else {
-          return;
-        }
-      };
-
-      const formattedNumber = Intl.NumberFormat("en", {
+      const options = {
         style: "currency",
         currency: "USD",
         minimumFractionDigits: 0,
-        notation: trueNotation(),
-      }).format(currency);
+      };
+      if (notation === "compact") {
+        options.notation = "compact";
+      } else if (notation && notation !== "compact") {
+        throw new Error(`Invalid parameter, expected "compact"`);
+      }
 
-      return formattedNumber;
+      return new Intl.NumberFormat("en", options).format(value);
     },
   },
 };
