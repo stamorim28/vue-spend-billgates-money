@@ -62,7 +62,6 @@ export default {
 
   &__list {
     width: 70%;
-    // margin-top: 1rem;
 
     @media screen and (max-width: 768px) {
       width: 95%;
@@ -112,6 +111,10 @@ export default {
   display: flex;
   justify-content: center;
 
+  @media screen and (max-width: 768px) {
+    width: 95% !important;
+  }
+
   &--block {
     width: 100%;
     margin: 10px 20%;
@@ -120,6 +123,10 @@ export default {
     border-top: 1px solid #333;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      margin: 10px 0 !important;
+    }
   }
 
   &--money {
