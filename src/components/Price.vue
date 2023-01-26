@@ -1,6 +1,6 @@
 <template>
   <div class="list__title">
-    <h1>{{ prod }}</h1>
+    <h1>{{ name }}</h1>
     <h3>{{ formatAllMoney(price) }}</h3>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
   mixins: [formatAllMoney],
   props: {
     price: Number,
-    prod: String,
+    name: String,
   },
 };
 </script>

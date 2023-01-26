@@ -18,7 +18,7 @@
     <ul class="list">
       <li v-for="(prod, index) in shop" :key="index" class="list__item">
         <img :src="prod.img" alt="prod" loading="lazy" />
-        <Price :price="prod.price" :prod="prod.name" />
+        <Price :price="prod.price" :name="prod.name" />
         <Input :price="prod.price" :id="prod.id" :money="this.money" />
       </li>
     </ul>
