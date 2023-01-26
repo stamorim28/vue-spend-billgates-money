@@ -3,10 +3,18 @@
     <h1>Your Receipt</h1>
     <div v-for="(prod, index) in cart" :key="index" class="cart__list">
       <div class="cart__item">
-        <h1>{{ prod.name }}</h1>
+        <h2>{{ prod.name }}</h2>
         <div class="cart__price">
-          <h1>{{ formatAllMoney(prod.price, "compact") }}</h1>
-          <h1>{{ `x` + prod.qtd }}</h1>
+          <h4>{{ formatAllMoney(prod.price, "compact") }}</h4>
+          <h4>{{ `x` + prod.qtd }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="spree-total">
+      <div class="spree-total--block">
+        <span>TOTAL</span>
+        <div class="spree-total--money">
+          $5,180,000,000
         </div>
       </div>
     </div>
@@ -57,12 +65,12 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    h1 {
+    h2 {
       font-size: 1.125rem;
       font-weight: normal;
     }
 
-    h1:first-child {
+    h2:first-child {
       text-transform: capitalize;
     }
 
@@ -74,16 +82,40 @@ export default {
   &__price {
     display: flex;
 
-    h1:first-child {
+    h4:first-child {
       font-weight: bold;
       color: $price-color;
     }
 
-    h1:last-child {
+    h4:last-child {
       margin-left: 0.75rem;
       color: $cost-color;
       font-weight: bold;
     }
+  }
+}
+
+.spree-total {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+
+  &--block {
+    width: 100%;
+    margin: 10px 20%;
+    padding: 10px 0;
+    font-weight: 700;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--money {
+    margin-left: 0.75rem;
+    color: $price-color;
+    font-weight: bold;
   }
 }
 </style>
