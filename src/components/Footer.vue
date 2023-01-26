@@ -14,7 +14,7 @@
       <div class="spree-total--block">
         <span>TOTAL</span>
         <div class="spree-total--money">
-          $5,180,000,000
+          {{ formatAllMoney(getTotalCart) }}
         </div>
       </div>
     </div>
@@ -30,6 +30,16 @@ export default {
   mixins: [formatAllMoney],
   computed: {
     ...mapGetters(["cart"]),
+
+    getTotalCart() {
+      const carts = this.cart;
+      let total = 0;
+
+      carts.forEach((item) => {
+        total += item.price * item.qtd;
+      });
+      return total;
+    },
   },
 };
 </script>
@@ -52,7 +62,7 @@ export default {
 
   &__list {
     width: 70%;
-    margin-top: 1rem;
+    // margin-top: 1rem;
 
     @media screen and (max-width: 768px) {
       width: 95%;
