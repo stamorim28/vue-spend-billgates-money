@@ -1,7 +1,8 @@
 <template>
   <main class="container--padd">
     <div class="money-bar">
-      <h1>
+      <h1>{{ formatAllMoney(money) }}</h1>
+      <!-- <h1>
         <vue3-autocounter
           ref="counter"
           :startAmount="money - newMoney"
@@ -11,7 +12,7 @@
           separator=","
           :autoinit="true"
         />
-      </h1>
+      </h1> -->
     </div>
 
     <ul class="list">
